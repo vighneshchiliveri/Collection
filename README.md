@@ -68,6 +68,27 @@ python3 -m http.server 8000
 
 Then open `http://localhost:8000`.
 
+## Hosting media files on Google Drive (optional)
+
+You don't have to keep files in `media/music` or `media/video`. The `path`
+field in `library.json` accepts a full URL instead of a local path — including
+a Google Drive link, pasted directly from Drive's share dialog:
+
+1. In Drive: right-click the file → **Share** → **Anyone with the link** → set to **Viewer**.
+2. Copy the link Drive gives you (looks like `https://drive.google.com/file/d/FILE_ID/view?usp=sharing`).
+3. Paste that exact link into `path` in `library.json` — the site automatically
+   rewrites it into a direct-download link, no manual editing needed:
+
+   ```json
+   { "quality": "320 kbps", "format": "MP3", "size": "8.9 MB", "path": "https://drive.google.com/file/d/1AbCdEfGhIjKlMnOpQr/view?usp=sharing" }
+   ```
+
+**Worth knowing:** Drive shows a "can't scan for viruses" warning page instead
+of downloading directly for files over ~25MB (most videos), and has a shared
+per-file download quota that can temporarily block popular files. Fine for
+personal/low-traffic use; for anything public-facing at scale, proper object
+storage (Cloudflare R2, Backblaze B2) is more reliable.
+
 ## Deploying
 
 Since this is fully static, you can host it for free on any of:
