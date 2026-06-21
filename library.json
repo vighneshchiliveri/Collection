@@ -1,0 +1,44 @@
+{
+  "music": [
+    {
+      "id": "m1",
+      "title": "Sample Track One",
+      "artist": "Your Artist Name",
+      "genre": "Electronic",
+      "duration": "3:42",
+      "cover": "media/thumbnails/placeholder-music.svg",
+      "files": [
+        { "quality": "320 kbps", "format": "MP3", "size": "8.9 MB", "path": "media/music/sample-track-one_320.mp3" },
+        { "quality": "192 kbps", "format": "MP3", "size": "5.3 MB", "path": "media/music/sample-track-one_192.mp3" },
+        { "quality": "128 kbps", "format": "MP3", "size": "3.6 MB", "path": "media/music/sample-track-one_128.mp3" }
+      ]
+    },
+    {
+      "id": "m2",
+      "title": "Sample Track Two",
+      "artist": "Your Artist Name",
+      "genre": "Acoustic",
+      "duration": "4:15",
+      "cover": "media/thumbnails/placeholder-music.svg",
+      "files": [
+        { "quality": "320 kbps", "format": "MP3", "size": "9.7 MB", "path": "media/music/sample-track-two_320.mp3" },
+        { "quality": "128 kbps", "format": "MP3", "size": "4.0 MB", "path": "media/music/sample-track-two_128.mp3" }
+      ]
+    }
+  ],
+  "video": [
+    {
+      "id": "v1",
+      "title": "Sample Video One",
+      "creator": "Your Channel Name",
+      "genre": "Vlog",
+      "duration": "8:21",
+      "cover": "media/thumbnails/placeholder-video.svg",
+      "files": [
+        { "quality": "1080p", "format": "MP4", "size": "210 MB", "path": "media/video/sample-video-one_1080p.mp4" },
+        { "quality": "720p", "format": "MP4", "size": "120 MB", "path": "media/video/sample-video-one_720p.mp4" },
+        { "quality": "480p", "format": "MP4", "size": "65 MB", "path": "media/video/sample-video-one_480p.mp4" }
+      ]
+    }
+  ]
+}

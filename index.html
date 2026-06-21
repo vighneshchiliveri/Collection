@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Archive — Personal Media Collection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark">A</span>
+      <div class="brand-text">
+        <h1>The Archive</h1>
+        <p>a personal collection, catalogued</p>
+      </div>
+    </div>
+    <nav class="view-toggle" role="tablist" aria-label="Collection type">
+      <button class="toggle-btn active" data-view="music" role="tab" aria-selected="true">Music</button>
+      <button class="toggle-btn" data-view="video" role="tab" aria-selected="false">Video</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="catalog-controls">
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search the catalog…" autocomplete="off">
+      <span class="search-count" id="resultCount"></span>
+    </div>
+    <div class="filter-wrap">
+      <label for="genreFilter">Genre</label>
+      <select id="genreFilter"><option value="">All</option></select>
+    </div>
+  </section>
+
+  <section id="catalog" class="catalog"></section>
+
+  <section id="emptyState" class="empty-state" hidden>
+    <p>No entries match your search.</p>
+  </section>
+</main>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>Catalogued for personal use. Add your own files to <code>/media/music</code> and <code>/media/video</code>, then update <code>library.json</code>.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
