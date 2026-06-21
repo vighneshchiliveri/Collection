@@ -35,6 +35,25 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+// Accepts any Google Drive share link format and rewrites it to a direct
+// download link. Leaves local paths and non-Drive URLs untouched.
+function normalizeDriveUrl(path) {
+  if (!path) return path;
+  const match = path.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+  if (match) {
+    return `https://drive.google.com/uc?export=download&id=${match[1]}`;
+  }
+  const openMatch = path.match(/drive\.google\.com\/open\?id=([^&]+)/);
+  if (openMatch) {
+    return `https://drive.google.com/uc?export=download&id=${openMatch[1]}`;
+  }
+  return path;
+}
+
+function isExternalUrl(path) {
+  return /^https?:\/\//i.test(path);
+}
+
 function getFiltered() {
   const items = library[currentView] || [];
   const q = searchInput.value.trim().toLowerCase();
@@ -94,15 +113,19 @@ function openModal(id) {
   if (!item) return;
 
   const subLabel = item.artist || item.creator || '';
-  const filesHtml = (item.files || []).map(f => `
+  const filesHtml = (item.files || []).map(f => {
+    const href = normalizeDriveUrl(f.path);
+    const downloadAttr = isExternalUrl(href) ? '' : 'download';
+    return `
     <div class="quality-row">
       <div class="quality-info">
         <span class="quality-name">${escapeHtml(f.format)} — ${escapeHtml(f.quality)}</span>
         <span class="quality-size">${escapeHtml(f.size || '')}</span>
       </div>
-      <a class="download-btn" href="${f.path}" download>Download</a>
+      <a class="download-btn" href="${href}" ${downloadAttr} target="_blank" rel="noopener">Download</a>
     </div>
-  `).join('');
+  `;
+  }).join('');
 
   modalContent.innerHTML = `
     <img class="modal-cover" src="${item.cover}" alt="">
