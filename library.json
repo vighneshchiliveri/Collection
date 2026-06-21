@@ -2,57 +2,18 @@
   "music": [
     {
       "id": "m1",
-      "title": "Track Title 1",
+      "title": "Your Song Title",
       "artist": "Your Artist Name",
       "genre": "Genre",
-      "duration": "0:00",
+      "duration": "3:42",
       "cover": "media/thumbnails/placeholder-music.svg",
       "files": [
-        { "quality": "Original", "format": "MP3", "size": "", "path": "https://drive.google.com/file/d/12qv8LSMHQ8HLHpEKOorA0kg9vCrYWZMF/view?usp=sharing" }
-      ]
-    },
-    {
-      "id": "m2",
-      "title": "Track Title 2",
-      "artist": "Your Artist Name",
-      "genre": "Genre",
-      "duration": "0:00",
-      "cover": "media/thumbnails/placeholder-music.svg",
-      "files": [
-        { "quality": "Original", "format": "MP3", "size": "", "path": "https://drive.google.com/file/d/1U6QP42vwm14pRLtEBC3ou5ZBBoEfeGHB/view?usp=sharing" }
-      ]
-    },
-    {
-      "id": "m3",
-      "title": "Track Title 3",
-      "artist": "Your Artist Name",
-      "genre": "Genre",
-      "duration": "0:00",
-      "cover": "media/thumbnails/placeholder-music.svg",
-      "files": [
-        { "quality": "Original", "format": "MP3", "size": "", "path": "https://drive.google.com/file/d/1UpCBIe3omNsQUZmZzIxdE0jUY3UKzMl3/view?usp=sharing" }
-      ]
-    },
-    {
-      "id": "m4",
-      "title": "Track Title 4",
-      "artist": "Your Artist Name",
-      "genre": "Genre",
-      "duration": "0:00",
-      "cover": "media/thumbnails/placeholder-music.svg",
-      "files": [
-        { "quality": "Original", "format": "MP3", "size": "", "path": "https://drive.google.com/file/d/1b_s8IVm90ZEZabpHnQWJutl67rbWnTfx/view?usp=sharing" }
-      ]
-    },
-    {
-      "id": "m5",
-      "title": "Track Title 5",
-      "artist": "Your Artist Name",
-      "genre": "Genre",
-      "duration": "0:00",
-      "cover": "media/thumbnails/placeholder-music.svg",
-      "files": [
-        { "quality": "Original", "format": "MP3", "size": "", "path": "https://drive.google.com/file/d/1iy6ZSstIQDbEc3iO_0vVYlJjxvCc9byz/view?usp=sharing" }
+        {
+          "quality": "original",
+          "format": "MP3",
+          "size": "5.5 MB",
+          "path": "https://drive.google.com/file/d/1iy6ZSstIQDbEc3iO_0vVYlJjxvCc9byz/view?usp=drive_link"
+        }
       ]
     }
   ],
